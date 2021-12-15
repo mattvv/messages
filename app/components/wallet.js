@@ -16,6 +16,7 @@ const opts = {
   preflightCommitment: "processed"
 }
 const programID = new PublicKey(idl.metadata.address);
+const network = clusterApiUrl('devnet');
 
 const Wallet = () => {
   const [message, setMessage] = useState('');
@@ -26,9 +27,7 @@ const Wallet = () => {
   async function getProvider() {
     /* create the provider and return it to the caller */
     /* network set to local network for now */
-    const network = clusterApiUrl('devnet');
     const connection = new Connection(network, opts.preflightCommitment);
-
     const provider = new Provider(
       connection, wallet, opts.preflightCommitment,
     );
@@ -115,7 +114,7 @@ const Wallet = () => {
 }
 
 const WalletWithProvider = () => (
-  <ConnectionProvider endpoint="http://127.0.0.1:8899">
+  <ConnectionProvider endpoint={network}>
     <WalletProvider wallets={wallets} autoConnect>
       <WalletModalProvider>
         <Wallet />

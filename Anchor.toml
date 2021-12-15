@@ -5,7 +5,7 @@ messages = "H6dCaZuC28NcQdHCMKPZJwsdLJczbBJogzeJiNuCzZkj"
 url = "https://anchor.projectserum.com"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "/Users/mattvv/.config/solana/id.json"
 
 [scripts]
