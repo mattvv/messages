@@ -7,7 +7,10 @@ const Wallet = dynamic(() => import('../components/wallet'), {
 
 const Home: NextPage = () => {
   return (
-   <Wallet />
+    <>
+      <Wallet />
+      This program is running on <b>devnet</b>. No actual money will change hands to send messages
+   </>
   )
 }
 
